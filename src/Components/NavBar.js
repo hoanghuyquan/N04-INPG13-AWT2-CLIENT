@@ -29,7 +29,7 @@ class NavBar extends Component {
                 <li className={"link"} >Nombres</li>
                 <li className={"link"} >Mon Compte</li>
                 <li className={"link"} >Archiver</li>
-                <li><Link onClick={() => this._onClick("about")} className={"link"} to="/about">Au Sujet</Link></li>
+                {/* <li><Link onClick={() => this._onClick("about")} className={"link"} to="/about">Au Sujet</Link></li> */}
 
 
             </ul>

@@ -21,8 +21,10 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/sujet" component={Topic} />
             <Route path="/niveau" component={Level} />
-            <Route path="/about" component={About} />
           </div>
+          <footer className="footer">
+            <About />
+          </footer>
         </div>
       </Router>
     );
