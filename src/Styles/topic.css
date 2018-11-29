@@ -1,0 +1,19 @@
+.row60 {
+    padding-top: 20px;
+    flex: 3;
+}
+
+.row40 {
+    padding-top: 20px;
+    flex: 2;
+}
+.button-submit {
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 50px; */
+    margin-top: 25px;
+    height: 80px;
+    width: 480px;
+    border-radius: 15px;
+    padding: 10px;
+}

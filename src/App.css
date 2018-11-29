@@ -1,3 +1,25 @@
+body {
+  background-color: #232323;
+  color: #ccc;
+}
+
+footer {
+  background-color: #09070d;
+  color: #ccc;
+  height: 250px;
+  margin-top: 20px;
+  border-top: 5px solid #333;
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .App {
   text-align: center;
 }
