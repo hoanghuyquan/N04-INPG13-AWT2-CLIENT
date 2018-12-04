@@ -6,6 +6,7 @@ import '../Styles/audio.css';
 class Audio extends Component {
     state = {
         answer: '',
+        // answer: this.props.item.question,
     }
 
     handleChange = (event) => {

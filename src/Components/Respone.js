@@ -3,14 +3,6 @@ import '../Styles/levels.css';
 
 class Response extends Component {
 
-
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        };
-    }
-
     render() {
         return (
             <div className="content">

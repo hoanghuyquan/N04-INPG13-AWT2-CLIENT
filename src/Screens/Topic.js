@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Audio from '../Components/Audio';
 import Configs from '../Configs';
 import Respone from '../Components/Respone';
+import Header from '../Components/Header';
+import ThumbSwiper from '../Components/ThumbSwiper';
+import NavBar from '../Components/NavBar';
 import Report from './Report';
 import '../Styles/topic.css';
 const axios = require('axios');
@@ -94,37 +97,42 @@ class Topic extends Component {
     render() {
         return (
             <div>
-                <div className="home">
-                    <div style={{ width: '60%' }}>
-                        <h3 className="audio-padding-right">{this.state.topic}</h3>
-                        {
-                            this.state.data.map((item, index) => {
-                                return (
-                                    <Audio
-                                        key={index}
-                                        index={index}
-                                        item={item}
-                                        length={this.state.data.length}
-                                        select={this.state.select}
-                                        next={this.next}
-                                        previous={this.previous}
-                                        typing={this.typing}
-                                        commit={this.commit} />
-                                );
-                            })
-                        }
+                <Header />
+                <div style={{ paddingLeft: '15%', paddingRight: '15%' }}>
+                    <ThumbSwiper />
+                    <NavBar />
+                    <div className="home">
+                        <div style={{ width: '60%' }}>
+                            <h3 className="audio-padding-right">{this.state.topic}</h3>
+                            {
+                                this.state.data.map((item, index) => {
+                                    return (
+                                        <Audio
+                                            key={index}
+                                            index={index}
+                                            item={item}
+                                            length={this.state.data.length}
+                                            select={this.state.select}
+                                            next={this.next}
+                                            previous={this.previous}
+                                            typing={this.typing}
+                                            commit={this.commit} />
+                                    );
+                                })
+                            }
 
+                        </div>
+                        <div style={{ width: '40%', marginLeft: 100 }}>
+                            {this.state.respone ?
+                                <div className="home">
+                                    <Respone data={this.state.data} qus />
+                                    <Respone data={this.state.answer} />
+                                </div> : null}
+                        </div>
                     </div>
-                    <div style={{ width: '40%', marginLeft: 100 }}>
-                        {this.state.respone ?
-                            <div className="home">
-                                <Respone data={this.state.data} qus />
-                                <Respone data={this.state.answer} />
-                            </div> : null}
+                    <div>
+                        <Report data={this.state.dataStatistic} />
                     </div>
-                </div>
-                <div>
-                    <Report data={this.state.dataStatistic} />
                 </div>
             </div>
         );

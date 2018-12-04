@@ -20,7 +20,6 @@ class Report extends Component {
                                 {
                                     lineTension: 0,
 
-
                                     label: 'Votre point',
                                     backgroundColor: 'transparent',
 
@@ -28,7 +27,7 @@ class Report extends Component {
                                     borderWidth: 2,
 
                                     pointBackgroundColor: '#5A1724',
-                                    pointBorderWidth: 5,
+                                    pointBorderWidth: 1,
                                     pointBorderColor: '#41042C',
 
                                     pointHoverBackgroundColor: '#000000',

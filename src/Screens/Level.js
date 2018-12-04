@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import News from '../Components/News';
 import Levels from '../Components/Levels';
+import Header from '../Components/Header';
+import ThumbSwiper from '../Components/ThumbSwiper';
+import NavBar from '../Components/NavBar';
 import Configs from '../Configs';
 import '../Styles/home.css';
 const axios = require('axios');
@@ -34,18 +37,25 @@ class Level extends Component {
 
     render() {
         return (
-            <div className="home">
-                <div style={{ width: '60%' }}>
-                    {
-                        this.state.data.map((item, index) => {
-                            return (
-                                <News key={index} index={index} item={item} />
-                            );
-                        })
-                    }
-                </div>
-                <div style={{ width: '40%', marginLeft: 100 }}>
-                    <Levels data={this.props.location.state.data} lv={this.state.level} refresh={this.refresh} />
+            <div>
+                <Header />
+                <div style={{ paddingLeft: '15%', paddingRight: '15%' }}>
+                    <ThumbSwiper />
+                    <NavBar />
+                    <div className="home">
+                        <div style={{ width: '60%' }}>
+                            {
+                                this.state.data.map((item, index) => {
+                                    return (
+                                        <News key={index} index={index} item={item} />
+                                    );
+                                })
+                            }
+                        </div>
+                        <div style={{ width: '40%', marginLeft: 100 }}>
+                            <Levels data={this.props.location.state.data} lv={this.state.level} refresh={this.refresh} />
+                        </div>
+                    </div>
                 </div>
             </div>
         );

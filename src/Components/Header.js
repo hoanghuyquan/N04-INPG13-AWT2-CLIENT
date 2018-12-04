@@ -8,9 +8,12 @@ class Header extends Component {
                 <div className="header-title">
                     <h2>Bienvenue à Écouter et Écrire</h2>
                 </div>
-                <div className="user">
-                    <h5>Hoang Huy Quan</h5>
-                </div>
+                {
+                    this.props.login ? null :
+                        <div className="user">
+                            <h5>Hoang Huy Quan</h5>
+                        </div>
+                }
             </div>
         );
     }

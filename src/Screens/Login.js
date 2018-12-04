@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-
+import Header from '../Components/Header';
+import ThumbSwiper from '../Components/ThumbSwiper';
+import { Link } from "react-router-dom";
 class Login extends Component {
     state = {
         phone: '',
         password: '',
-        login: '#D8202A'
+        login: '#D8202A',
+        log: true,
     }
 
     changePhone = (input) => {
@@ -32,36 +35,51 @@ class Login extends Component {
         }
         //check length password
         else if (this.state.password.length < 6) {
-           alert("You have not yet typed password.");
+            alert("You have not yet typed password.");
         }
         // check special characters in password
         else if (this.state.password.match(/[^a-zA-Z0-9]+/g)) {
             alert('Wrong format password.');
         }
-        else alert('Login success!');
+        else {
+            if (this.state.phone === '0987654321' && this.state.password === 'admin123') {
+                this.setState({ log: true });
+            } else alert('Wrong password.');
+        }
     }
-
 
 
     render() {
         return (
-            <div style={{ height: 1000 }} className="test">
-                <div>
-                    <p>Phone number</p>
-                    <input
-                        type="number"
-                        value={this.state.phone}
-                        onChange={(text) => this.changePhone(text)} />
-                </div>
-                <div>
-                    <p>Password</p>
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={(text) => this.changePassword(text)} />
-                </div>
-                <div>
-                    <button style={{ backgroundColor: this.state.login, marginTop: 20, height: 30, width: 100 }} type="button" onClick={this.submit}>Login</button>
+            <div>
+                <Header login />
+                <div style={{ paddingLeft: '15%', paddingRight: '15%' }}>
+                    <ThumbSwiper />
+                    <div style={{ height: 350 }}>
+                        <div style={{}} className="test">
+                            <div>
+                                <h3>Phone number</h3>
+                                <input
+                                    style={{ height: 30, width: 300 }}
+                                    type="number"
+                                    value={this.state.phone}
+                                    onChange={(text) => this.changePhone(text)} />
+                            </div>
+                            <div>
+                                <h3>Password</h3>
+                                <input
+                                    style={{ height: 30, width: 300 }}
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={(text) => this.changePassword(text)} />
+                            </div>
+                            <div>
+                                <Link to={this.state.log && "/home"}>
+                                    <button style={{ backgroundColor: this.state.login, marginTop: 20, height: 40, width: 100, fontSize: 15, color: '#ffffff' }} type="button" onClick={this.submit}>Login</button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
