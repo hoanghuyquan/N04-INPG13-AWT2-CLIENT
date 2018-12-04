@@ -8,6 +8,9 @@ const Statistic = mongoose.model('Statistic', { level: String, point: String });
 
 // const kitty = new Topic({ topic: '1', level: '1', Time: '2'});
 // kitty.save().then(() => console.log('meow'));
+// const kitty1 = new Data({ level: '1', topic_id: '1', topic: '1', question: '1', audio: '1'});
+// kitty1.save().then(() => console.log('meow1'));
+
 // Where
 // db.getCollection('datas').find({ "level": "Difficile" })
 // And
